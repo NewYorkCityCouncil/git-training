@@ -1,6 +1,6 @@
 ---
 title: "Gitting Started"
-subtitle: "⚔<br/>Learning Git"
+subtitle: "⚔Learning Git"
 author: "Nick Solomon"
 date: "October 17, 2018"
 output:
@@ -140,12 +140,13 @@ On branch master
 No commits yet
 
 Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+  (use "git add <file>..." to include in what will be 
+  committed)
 
         my_file.txt
 
-nothing added to commit but untracked files present (use "git add"
-to track)
+nothing added to commit but untracked files present (use 
+"git add" to track)
 ```
 
 ---
@@ -240,7 +241,8 @@ class: center, middle, inverse
 
 ```bash
 *$ git log
-commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a88b45 (HEAD -> master)
+commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a88b45 
+(HEAD -> master)
 Author: Nick Solomon <NSolomon@council.nyc.gov>
 Date:   Thu Oct 11 16:08:37 2018 -0400
 
@@ -251,12 +253,6 @@ Author: Nick Solomon <NSolomon@council.nyc.gov>
 Date:   Thu Oct 11 15:19:54 2018 -0400
 
     a few sections
-
-commit 41c2f89bcc5b5e22a3b4fcea18c44a36a8ce9695
-Author: Nick Solomon <NSolomon@council.nyc.gov>
-Date:   Thu Oct 11 14:50:06 2018 -0400
-
-    first commit
 ```
 --
 
@@ -468,7 +464,7 @@ class: center, middle, inverse
 - I made changes
 --
 
-  - In the same place D:
+  - In the same place `r emo::ji("sob")`
 --
 
 - How does Git decide whose changes to use?
