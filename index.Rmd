@@ -107,9 +107,124 @@ class: center, middle, inverse
 
 ---
 
+## Git workflow
+--
+
+1. Create, edit, and save files
+--
+
+2. *Stage* changes
+--
+
+3. *Commit* changes
+---
+
+## Seeing what's up
+--
+
+```bash
+*$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        my_file.txt
+
+nothing added to commit but untracked files present (use "git add"
+to track)
+```
+
+---
+## Staging changes
+--
+
+- `git add` pulls double duty
+--
+
+- Use `git add <file>` to start tracking files
+--
+
+  - Let Git know you care about this particular file
+--
+
+- Use `git add <file>` to stage changes
+--
+
+  - Let Git know you've made changes to a file and you want to save them soon
+--
+
+  - Adds a file to the *index*
+---
+
+## Commits
+--
+
+- A snapshot of your repo
+--
+
+- Should be a small, complete unit of work
+--
+
+- `git commit` saves everything that's staged
+--
+
+- Opens a text editor to write a *commit message*
+--
+
+  - A short description of your changes
+--
+
+  - Good: `"Wrote function to parse date column."`
+--
+
+  - Bad: `"Did whole analysis."`
+--
+
+  - Worse: `"skjdafasklj"`
+
+---
+
+## Review
+--
+
+- `git add <files>` to stage changes
+--
+
+- `git commit` to save changes
+--
+
+- Write a commit message
+
+---
+
+## The shortcut
+--
+
+```bash
+git commit -am "Message"
+```
+--
+
+- `-a`: Add all changes to files that are already tracked
+--
+
+- `-m`: Use the following string as my commit message
+
+---
 class: center, middle, inverse
 
 # History
+
+---
+
+## Viewing history
+
+---
+
+## Going back in time
 
 ---
 
