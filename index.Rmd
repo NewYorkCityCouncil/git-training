@@ -5,9 +5,138 @@ author: "Nick Solomon"
 date: "October 17, 2018"
 output:
   xaringan::moon_reader:
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
 ---
+class: center, middle, inverse
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_light(
+  base_color = "#265a88",
+  white_color = "#FFFFFF"
+)
+```
+
+# Why Git?
+
+---
+
+## Why Git?
+--
+
+- Versioning
+--
+
+- Collaboration
+
+---
+
+class: center, middle, inverse
+
+# Setting up Git
+
+---
+
+## Config
+--
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@council.nyc.gov"
+$ git config --global credential.helper wincred
+```
+
+---
+
+class: center, middle, inverse
+
+# Repos
+
+---
+
+## What is a repo?
+--
+
+- A folder
+--
+
+- Plus magic!
+--
+
+  - The `.git` directory
+--
+
+- Contains all changes to tracked files
+--
+
+- You can only track files within the repo!
+---
+
+## What is a repo?
+--
+
+```bash
+$ ls -a
+```
+--
+
+```bash
+.  ..
+```
+--
+```bash
+$ git init
+$ ls -a
+```
+--
+
+```bash
+.  ..  .git
+```
+
+---
+
+class: center, middle, inverse
+
+# Staging and commits
+
+---
+
+class: center, middle, inverse
+
+# History
+
+---
+
+class: center, middle, inverse
+
+# Branches
+
+---
+
+class: center, middle, inverse
+
+# Remotes
+
+---
+
+class: center, middle, inverse
+
+# Conflicts
+
+---
+
+class: center, middle, inverse
+
+# The danger zone
+
+---
+
+class: center, middle, inverse
+
+# Resources
