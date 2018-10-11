@@ -346,7 +346,100 @@ class: center, middle, inverse
 --
 
 - A playground
+--
 
+- A separate timeline where you can play around without bothering other people
+
+---
+
+## Using branches
+--
+
+- `git branch <branch-name>`
+--
+
+  - Creates a new branch at the current commit
+--
+
+- `git checkout <branch-name>`
+--
+
+  - Switch to a new branch
+--
+
+  - Make changes, commit things, have fun
+--
+
+- `git checkout -b <branch-name>`
+--
+
+  - Create new branch and switch to it
+
+---
+
+## Branches and remotes
+--
+
+- `git push <remote> <branch>`
+--
+
+  - Push commits on a branch to a remote
+--
+
+  - Creates new branch on remote if it doesn't exist
+--
+
+- `git push -u <remote> <branch>`
+--
+
+  - Push commits on branch to a remote
+--
+
+  - `-u`: Set the new branch on the remote as "upstream"
+--
+
+  - Create a link between your branch and the branch on the remote
+
+---
+
+## Branches and remotes
+--
+
+- `git pull <remote> <branch>`
+--
+  - Pull changes on branch from remote
+--
+
+- `git pull`
+--
+
+  - Pulls from your branches upstream branch
+
+---
+
+## Merges
+--
+
+- Put commits from one branch onto another branch
+--
+
+- You're done playing and you want everyone to see what you did
+--
+
+- `git merge <branch>`
+--
+
+  - Merge changes on branch into currently checked out branch
+--
+
+
+```bash
+$ git checkout master
+$ git merge my-branch
+```
+--
+
+- Creates a "merge commit"
 ---
 class: center, middle, inverse
 
