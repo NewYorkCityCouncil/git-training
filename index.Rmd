@@ -546,3 +546,22 @@ class: center, middle, inverse
 # Resources
 
 ---
+
+## For learning
+
+- DataCamp
+  - https://www.datacamp.com/courses/introduction-to-git-for-data-science
+  - Interactive Git tutorial
+- Happy Git and GitHub for the useR
+  - http://happygitwithr.com/
+  - How to integrate Git and GitHub with RStudio
+- Visualizing Git
+  - http://git-school.github.io/visualizing-git/
+  - Interactive tool for visualizing Git commits, branches, and operations
+
+---
+
+## For reference
+
+- Git documentation
+  - https://git-scm.com/docs
