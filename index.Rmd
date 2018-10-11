@@ -221,17 +221,71 @@ class: center, middle, inverse
 ---
 
 ## Viewing history
+--
 
+- Git lets you view the history of your entire project
+--
+
+
+```bash
+*$ git log
+commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a88b45 (HEAD -> master)
+Author: Nick Solomon <NSolomon@council.nyc.gov>
+Date:   Thu Oct 11 16:08:37 2018 -0400
+
+    staging and committing
+
+commit 3d4475c1c7bc4acfad48768fdb1de275f25c019a
+Author: Nick Solomon <NSolomon@council.nyc.gov>
+Date:   Thu Oct 11 15:19:54 2018 -0400
+
+    a few sections
+
+commit 41c2f89bcc5b5e22a3b4fcea18c44a36a8ce9695
+Author: Nick Solomon <NSolomon@council.nyc.gov>
+Date:   Thu Oct 11 14:50:06 2018 -0400
+
+    first commit
+```
+--
+
+- Date, time, author, message
 ---
 
 ## Going back in time
+--
 
----
+- Explore the past
+--
+  
+  - `git checkout <commit> [<file>]`
+--
 
-class: center, middle, inverse
+  - Makes the repo (or a file) as it was at `<commit>`
+--
 
-# Branches
+- Return to the near past
+--
+  
+  - `git reset <--hard|--soft|--mixed> <ref> [<file>]`
+--
+  
+  - Undoes committed changes
+--
 
+  - With `<file>` unstages a file
+--
+
+- Return to the far past
+--
+
+  - `git revert <commits>`
+--
+  
+  - Creates "inverse" commits
+--
+
+- **Warning**: Here be dragons
 ---
 
 class: center, middle, inverse
@@ -240,6 +294,60 @@ class: center, middle, inverse
 
 ---
 
+## Enter the cloud
+--
+
+- Another Git repo connected to yours
+--
+
+- Collaboration
+--
+
+- Backups
+---
+
+## GitHub
+--
+
+- Create a repo on GitHub
+--
+
+- `git clone`
+--
+
+  - Copy a remote repo to your computer
+--
+
+  - Create a connection between your repo and the remote
+
+---
+
+## Remote operations
+--
+
+- `git pull`
+--
+
+  - Gather commits from the remote and apply them to your local copy
+--
+
+- `git push`
+--
+
+  - Put your commits on the remote
+
+---
+class: center, middle, inverse
+
+# Branches
+
+---
+## What is a branch
+--
+
+- A playground
+
+---
 class: center, middle, inverse
 
 # Conflicts
