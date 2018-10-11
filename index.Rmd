@@ -364,7 +364,7 @@ class: center, middle, inverse
 - `git checkout <branch-name>`
 --
 
-  - Switch to a new branch
+  - Switch to a branch
 --
 
   - Make changes, commit things, have fun
@@ -414,7 +414,7 @@ class: center, middle, inverse
 - `git pull`
 --
 
-  - Pulls from your branches upstream branch
+  - Pull from your branch's upstream branch
 
 ---
 
@@ -478,7 +478,7 @@ This is the unchanged portion of the file.
 <<<<<<< your-branch
 These are my changes.
 =======
-This is what's on GitHub, pushed by Brook.
+These are your changes.
 >>>>>>> my-branch
 No more changes here either.
 ```
@@ -496,6 +496,9 @@ This is the unchanged portion of the file.
 These are our changes.
 No more changes here either.
 ```
+--
+
+- Commit the result to complete the merge
 ---
 
 ## When do merge conflicts happen
@@ -526,7 +529,7 @@ class: center, middle, inverse
 - `git rebase`
 --
 
-  - Rewrite branch history by creating new commits containing your changes and apply them to a different commit
+  - Rewrite branch history by creating new commits containing your changes and apply them to a different "base" commit
 --
 
 - `git cherry-pick`
