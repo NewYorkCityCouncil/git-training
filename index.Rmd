@@ -17,24 +17,17 @@ class: center, middle, inverse
 ```{r xaringan-themer, include = FALSE}
 library(xaringanthemer)
 
-extra_css <- list(
-  ".remark-code" = list(
-    "font-size" = "18px"
-  )
-)
-
-
 mono_light(
   base_color = "#2f56a6",
   white_color = "#FFFFFF",
   black_color = "#000000",
   text_font_size = "28px",
-  text_font_family = "'Lato'",
-  text_font_url = "https://fonts.googleapis.com/css?family=Lato",
-  header_font_family = "'Volkhov'",
-  header_font_url = "https://fonts.googleapis.com/css?family=Volkhov",
+  text_font_google = google_font("Lato", "400", "400i", "700", "700i"),
+  header_font_google = google_font("Roboto Slab"),
   header_color = darken_color("#2f56a6", .3),
-  extra_css = extra_css
+  code_inline_color = darken_color("#2f56a6", .4),
+  code_highlight_color = "rgba(88, 119, 183, .5)",
+  text_slide_number_font_size = ".7em"
 )
 ```
 
@@ -62,10 +55,20 @@ class: center, middle, inverse
 --
 
 ```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email "you@council.nyc.gov"
-$ git config --global credential.helper wincred
+$ git config
 ```
+--
+
+- `--global`
+--
+
+- `user.name <your name>`
+--
+
+- `user.email <your email>`
+--
+
+  - Has to be the same as on GitHub
 
 ---
 
@@ -145,13 +148,13 @@ On branch master
 No commits yet
 
 Untracked files:
-  (use "git add <file>..." to include in what will be 
-  committed)
+  (use "git add <file>..." to include in 
+  what will be committed)
 
         my_file.txt
 
-nothing added to commit but untracked files present (use 
-"git add" to track)
+nothing added to commit but untracked files
+present (use "git add" to track)
 ```
 
 ---
@@ -246,18 +249,13 @@ class: center, middle, inverse
 
 ```bash
 *$ git log
-commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a88b45 
-(HEAD -> master)
-Author: Nick Solomon <NSolomon@council.nyc.gov>
+commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a
+88b45 (HEAD -> master)
+Author: Nick Solomon <NSolomon@council.nyc
+.gov>
 Date:   Thu Oct 11 16:08:37 2018 -0400
 
     staging and committing
-
-commit 3d4475c1c7bc4acfad48768fdb1de275f25c019a
-Author: Nick Solomon <NSolomon@council.nyc.gov>
-Date:   Thu Oct 11 15:19:54 2018 -0400
-
-    a few sections
 ```
 --
 
@@ -564,13 +562,13 @@ class: center, middle, inverse
 
 ## For learning
 
-- DataCamp
+- *Introduction to Git for Data Science*
   - https://www.datacamp.com/courses/introduction-to-git-for-data-science
   - Interactive Git tutorial
-- Happy Git and GitHub for the useR
+- *Happy Git and GitHub for the useR*
   - http://happygitwithr.com/
   - How to integrate Git and GitHub with RStudio
-- Visualizing Git
+- *Visualizing Git*
   - http://git-school.github.io/visualizing-git/
   - Interactive tool for visualizing Git commits, branches, and operations
 
@@ -580,3 +578,16 @@ class: center, middle, inverse
 
 - Git documentation
   - https://git-scm.com/docs
+  
+---
+
+class: middle
+
+Based on:
+
+> Daisie Huang and Ivan Gonzalez (eds): "Software Carpentry: Version
+Control with Git."  Version 2016.06, June 2016,
+https://github.com/swcarpentry/git-novice, 10.5281/zenodo.57467.
+
+> Copyright © Software Carpentry <https://software-carpentry.org/> under the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/)
+
