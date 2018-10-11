@@ -407,6 +407,7 @@ class: center, middle, inverse
 
 - `git pull <remote> <branch>`
 --
+
   - Pull changes on branch from remote
 --
 
@@ -447,12 +448,101 @@ class: center, middle, inverse
 
 ---
 
+## What is a merge conflict?
+--
+
+- You made changes
+--
+
+- I made changes
+--
+
+  - In the same place D:
+--
+
+- How does Git decide whose changes to use?
+--
+
+- It doesn't
+
+---
+
+## Dealing with merge conflicts
+--
+
+- What does it look like?
+--
+
+```
+This is the unchanged portion of the file.
+<<<<<<< your-branch
+These are my changes.
+=======
+This is what's on GitHub, pushed by Brook.
+>>>>>>> my-branch
+No more changes here either.
+```
+
+---
+
+## Dealing with merge conflicts
+--
+
+- Edit the file to manually incorporate changes
+--
+
+```
+This is the unchanged portion of the file.
+These are our changes.
+No more changes here either.
+```
+---
+
+## When do merge conflicts happen
+--
+
+- Merging branches
+--
+
+- Pulling from remotes
+
+---
+
 class: center, middle, inverse
 
 # The danger zone
 
 ---
 
+## Git is dangerous
+--
+
+- `git fetch`
+--
+
+  - Gather remote changes but *don't* integrate them into your local tree
+--
+
+- `git rebase`
+--
+
+  - Rewrite branch history by creating new commits containing your changes and apply them to a different commit
+--
+
+- `git cherry-pick`
+--
+
+  - Selectively apply commits
+--
+
+- If you think you need to do one of these ask for help
+--
+
+  - But not from me
+---
+
 class: center, middle, inverse
 
 # Resources
+
+---
