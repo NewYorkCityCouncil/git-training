@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gitting Started</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Nick Solomon | New York City Council" />
+    <meta name="date" content="2018-10-17" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Gitting Started
+## Learning Git
+### Nick Solomon | New York City Council
+### October 17, 2018
+
+---
+
+class: center, middle, inverse
+
+
+
+# Why Git?
+
+---
+
+## Why Git?
+--
+
+- Tracking changes
+--
+  
+  - Who, what when, why?
+--
+
+- Collaboration
+
+---
+
+class: center, middle, inverse
+
+# Setting up Git
+
+---
+
+## Config
+--
+
+```bash
+$ git config --global
+```
+--
+
+- `user.name &lt;your name&gt;`
+--
+
+- `user.email &lt;your email&gt;`
+--
+
+  - Has to be the same as on GitHub
+
+---
+
+class: center, middle, inverse
+
+# Repos
+
+---
+
+## What is a repo?
+--
+
+- A folder
+--
+
+- Plus magic!
+--
+
+  - The `.git` directory
+--
+
+- Contains all changes to tracked files
+--
+
+- You can only track files within the repo!
+
+---
+
+## What is a repo?
+--
+
+```bash
+$ ls -a
+```
+--
+
+```bash
+.  ..
+```
+--
+```bash
+$ git init
+$ ls -a
+```
+--
+
+```bash
+.  ..  .git
+```
+
+---
+
+class: center, middle, inverse
+
+# Staging and commits
+
+---
+
+## Git workflow
+--
+
+1. Create, edit, and save files
+--
+
+2. *Stage* changes
+--
+
+3. *Commit* changes
+---
+
+## Seeing what's up
+--
+
+```bash
+*$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in 
+  what will be committed)
+
+        my_file.txt
+
+nothing added to commit but untracked files
+present (use "git add" to track)
+```
+
+---
+## Staging changes
+--
+
+- `git add` pulls double duty
+--
+
+- Use `git add &lt;file&gt;` to start tracking files
+--
+
+  - Let Git know you care about this particular file
+--
+
+- Use `git add &lt;file&gt;` to stage changes
+--
+
+  - Let Git know you've made changes to a file and you want to save them soon
+--
+
+  - Adds a file to the *index*
+---
+
+## Commits
+--
+
+- A snapshot of your repo
+--
+
+- Should be a small, complete unit of work
+--
+
+- `git commit` saves everything that's staged
+--
+
+- Opens a text editor to write a *commit message*
+--
+
+  - A short description of your changes
+--
+
+  - Good: `"Wrote function to parse date column."`
+--
+
+  - Bad: `"Did whole analysis."`
+--
+
+  - Worse: `"skjdafasklj"`
+
+---
+
+## Review
+--
+
+- `git add &lt;files&gt;` to stage changes
+--
+
+- `git commit` to save changes
+--
+
+- Write a commit message
+
+---
+
+## The shortcut
+--
+
+```bash
+git commit -am "Message"
+```
+--
+
+- `-a`: Add all changes to files that are already tracked
+--
+
+- `-m`: Use the following string as my commit message
+
+---
+class: center, middle, inverse
+
+# History
+
+---
+
+## Viewing history
+--
+
+- Git lets you view the history of your entire project
+--
+
+
+```bash
+*$ git log
+commit 0628f46c7baffc01775e7d2ed8ac8b9ea6a
+88b45 (HEAD -&gt; master)
+Author: Nick Solomon &lt;NSolomon@council.nyc
+.gov&gt;
+Date:   Thu Oct 11 16:08:37 2018 -0400
+
+    staging and committing
+```
+--
+
+- Date, time, author, message
+---
+
+## Going back in time
+--
+
+- Explore the past
+--
+  
+  - `git checkout &lt;commit&gt; [&lt;file&gt;]`
+--
+
+  - Makes the repo (or a file) as it was at `&lt;commit&gt;`
+--
+
+- Return to the near past
+--
+  
+  - `git reset &lt;--hard|--soft|--mixed&gt; &lt;ref&gt; [&lt;file&gt;]`
+--
+  
+  - Undoes committed changes
+--
+
+  - With `&lt;file&gt;` unstages a file
+--
+
+- Return to the far past
+--
+
+  - `git revert &lt;commits&gt;`
+--
+  
+  - Creates "inverse" commits
+--
+
+- **Warning:** Here be dragons
+---
+
+class: center, middle, inverse
+
+# Remotes
+
+---
+
+## Enter the cloud
+--
+
+- Another Git repo connected to yours
+--
+
+- Collaboration
+--
+
+- Backups
+---
+
+## GitHub
+--
+
+- Create a repo on GitHub
+--
+
+- `git clone`
+--
+
+  - Copy a remote repo to your computer
+--
+
+  - Create a connection between your repo and the remote
+
+---
+
+## Dealing with remotes
+--
+
+- `git remote -v`
+
+```bash
+*$ git remote -v
+g-drive file://G:/DATABASE/... (fetch)
+g-drive file://G:/DATABASE/... (push)
+```
+
+--
+
+- `git remote add &lt;name&gt; &lt;url&gt;`
+--
+
+- `git remote remove &lt;name&gt;`
+
+---
+## Remote operations
+--
+
+- `git pull`
+--
+
+  - Gather commits from the remote and apply them to your local copy
+--
+
+- `git push`
+--
+
+  - Put your commits on the remote
+
+---
+class: center, middle, inverse
+
+# Branches
+
+---
+## What is a branch
+--
+
+- A playground
+--
+
+- A separate timeline where you can play around without bothering other people
+
+---
+
+## Using branches
+--
+
+- `git branch &lt;branch-name&gt;`
+--
+
+  - Creates a new branch at the current commit
+--
+
+- `git checkout &lt;branch-name&gt;`
+--
+
+  - Switch to a branch
+--
+
+  - Make changes, commit things, have fun
+--
+
+- `git checkout -b &lt;branch-name&gt;`
+--
+
+  - Create new branch and switch to it
+
+---
+
+## Branches and remotes
+--
+
+- `git push &lt;remote&gt; &lt;branch&gt;`
+--
+
+  - Push commits on a branch to a remote
+--
+
+  - Creates new branch on remote if it doesn't exist
+--
+
+- `git push -u &lt;remote&gt; &lt;branch&gt;`
+--
+
+  - Push commits on branch to a remote
+--
+
+  - `-u`: Set the new branch on the remote as "upstream"
+--
+
+  - Create a link between your branch and the branch on the remote
+
+---
+
+## Branches and remotes
+--
+
+- `git pull &lt;remote&gt; &lt;branch&gt;`
+--
+
+  - Pull changes on branch from remote
+--
+
+- `git pull`
+--
+
+  - Pull from your branch's upstream branch
+
+---
+
+## Merges
+--
+
+- Put commits from one branch onto another branch
+--
+
+- You're done playing and you want everyone to see what you did
+--
+
+- `git merge &lt;branch&gt;`
+--
+
+  - Merge changes on branch into currently checked out branch
+--
+
+
+```bash
+$ git checkout master
+$ git merge my-branch
+```
+--
+
+- Creates a "merge commit"
+---
+class: center, middle, inverse
+
+# Conflicts
+
+---
+
+## What is a merge conflict?
+--
+
+- You made changes
+--
+
+- I made changes
+--
+
+  - In the same place 😭
+--
+
+- How does Git decide whose changes to use?
+--
+
+- It doesn't
+
+---
+
+## Dealing with merge conflicts
+--
+
+- What does it look like?
+--
+
+```
+This is the unchanged portion of the file.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; your-branch
+These are my changes.
+=======
+These are your changes.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; my-branch
+No more changes here either.
+```
+
+---
+
+## Dealing with merge conflicts
+--
+
+- Edit the file to manually incorporate changes
+--
+
+```
+This is the unchanged portion of the file.
+These are our changes.
+No more changes here either.
+```
+--
+
+- Commit the result to complete the merge
+---
+
+## When do merge conflicts happen
+--
+
+- Merging branches
+--
+
+- Pulling from remotes
+
+---
+
+class: center, middle, inverse
+
+# The danger zone
+
+---
+
+## Git is dangerous
+--
+
+- `git fetch`
+--
+
+  - Gather remote changes but *don't* integrate them into your local tree
+--
+
+- `git rebase`
+--
+
+  - Rewrite branch history by creating new commits containing your changes and apply them to a different "base" commit
+--
+
+- `git cherry-pick`
+--
+
+  - Selectively apply commits
+--
+
+- If you think you need to do one of these ask for help
+--
+
+  - But not from me
+---
+
+class: center, middle, inverse
+
+# Homework
+
+---
+## Homework
+--
+
+- GitHub Flow
+  - https://guides.github.com/introduction/flow/
+--
+
+- Mastering Issues
+  - https://guides.github.com/features/issues/
+--
+
+- Proposing changes to your work with pull request
+  - https://help.github.com/articles/proposing-changes-to-your-work-with-pull-requests/
+
+
+---
+class: center, middle, inverse
+
+# Resources
+
+---
+
+## For learning
+
+- *Introduction to Git for Data Science*
+  - https://www.datacamp.com/courses/introduction-to-git-for-data-science
+  - Interactive Git tutorial
+- *Happy Git and GitHub for the useR*
+  - http://happygitwithr.com/
+  - How to integrate Git and GitHub with RStudio
+- *Visualizing Git*
+  - http://git-school.github.io/visualizing-git/
+  - Interactive tool for visualizing Git commits, branches, and operations
+
+---
+
+## For reference
+
+- Git documentation
+  - https://git-scm.com/docs
+  
+---
+
+class: middle
+
+Based on:
+
+&gt; Daisie Huang and Ivan Gonzalez (eds): "Software Carpentry: Version
+Control with Git."  Version 2016.06, June 2016,
+https://github.com/swcarpentry/git-novice, 10.5281/zenodo.57467.
+
+&gt; Copyright © Software Carpentry &lt;https://software-carpentry.org/&gt; under the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
