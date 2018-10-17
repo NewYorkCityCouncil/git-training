@@ -1,7 +1,7 @@
 ---
 title: "Gitting Started"
 subtitle: "Learning Git"
-author: "Nick Solomon"
+author: "Nick Solomon | New York City Council"
 date: "October 17, 2018"
 output:
   xaringan::moon_reader:
@@ -38,7 +38,10 @@ mono_light(
 ## Why Git?
 --
 
-- Versioning
+- Tracking changes
+--
+  
+  - Who, what when, why?
 --
 
 - Collaboration
@@ -55,11 +58,8 @@ class: center, middle, inverse
 --
 
 ```bash
-$ git config
+$ git config --global
 ```
---
-
-- `--global`
 --
 
 - `user.name <your name>`
@@ -94,6 +94,7 @@ class: center, middle, inverse
 --
 
 - You can only track files within the repo!
+
 ---
 
 ## What is a repo?
@@ -295,7 +296,7 @@ Date:   Thu Oct 11 16:08:37 2018 -0400
   - Creates "inverse" commits
 --
 
-- **Warning**: Here be dragons
+- **Warning:** Here be dragons
 ---
 
 class: center, middle, inverse
@@ -332,6 +333,25 @@ class: center, middle, inverse
 
 ---
 
+## Dealing with remotes
+--
+
+- `git remote -v`
+
+```bash
+*$ git remote -v
+g-drive file://G:/DATABASE/... (fetch)
+g-drive file://G:/DATABASE/... (push)
+```
+
+--
+
+- `git remote add <name> <url>`
+--
+
+- `git remote remove <name>`
+
+---
 ## Remote operations
 --
 
@@ -554,6 +574,27 @@ class: center, middle, inverse
   - But not from me
 ---
 
+class: center, middle, inverse
+
+# Homework
+
+---
+## Homework
+--
+
+- GitHub Flow
+  - https://guides.github.com/introduction/flow/
+--
+
+- Mastering Issues
+  - https://guides.github.com/features/issues/
+--
+
+- Proposing changes to your work with pull request
+  - https://help.github.com/articles/proposing-changes-to-your-work-with-pull-requests/
+
+
+---
 class: center, middle, inverse
 
 # Resources
